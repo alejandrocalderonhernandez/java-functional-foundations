@@ -1,4 +1,4 @@
-package com.legendcraft.engine.contract;
+package com.debuggeandoideas.engine.contract;
 
 public interface Healable {
 

@@ -1,4 +1,4 @@
-package com.legendcraft.engine.problem;
+package com.debuggeandoideas.engine.problem;
 
 import java.util.logging.Logger;
 

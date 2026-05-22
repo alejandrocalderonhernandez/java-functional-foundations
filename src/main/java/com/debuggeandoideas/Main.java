@@ -1,9 +1,9 @@
 package com.debuggeandoideas;
 
-import com.legendcraft.engine.problem.Archer;
-import com.legendcraft.engine.problem.BattleEngine;
-import com.legendcraft.engine.problem.Mage;
-import com.legendcraft.engine.problem.Warrior;
+import com.debuggeandoideas.engine.problem.Archer;
+import com.debuggeandoideas.engine.problem.BattleEngine;
+import com.debuggeandoideas.engine.problem.Mage;
+import com.debuggeandoideas.engine.problem.Warrior;
 
 public class Main {
     public static void main(String[] args) {
