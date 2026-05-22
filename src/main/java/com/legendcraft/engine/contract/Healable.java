@@ -1,6 +1,6 @@
 package com.legendcraft.engine.contract;
 
-public interface Damageable {
+public interface Healable {
 
     // TODO: Define the receive damage contract
 
