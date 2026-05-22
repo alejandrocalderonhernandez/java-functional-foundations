@@ -40,3 +40,6 @@ build/
 ### Claude Code ###
 .claude/
 CLAUDE.md
+
+### Course docs ###
+docs/
