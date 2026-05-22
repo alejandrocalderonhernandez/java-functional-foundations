@@ -1,9 +1,6 @@
 package com.debuggeandoideas;
 
-import com.legendcraft.engine.problem.Archer;
-import com.legendcraft.engine.problem.BattleEngine;
-import com.legendcraft.engine.problem.Mage;
-import com.legendcraft.engine.problem.Warrior;
+import com.debuggeandoideas.engine.problem.*;
 
 public class Main {
     public static void main(String[] args) {
@@ -13,6 +10,9 @@ public class Main {
         var archer = new Archer("Sand", 10);
         var mage = new Mage("Merl", 8);
         var warrior = new Warrior("Rex", 12);
+
+        engine.startBattle(new Paladin());
+
 
 
     }

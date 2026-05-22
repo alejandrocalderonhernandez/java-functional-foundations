@@ -1,8 +1,11 @@
-package com.legendcraft.engine.problem;
+package com.debuggeandoideas.engine.problem;
+
+import com.debuggeandoideas.engine.contract.Attackable;
+import com.debuggeandoideas.engine.contract.Healable;
 
 import java.util.logging.Logger;
 
-public class Warrior {
+public class Warrior implements Attackable, Healable {
 
     private static final Logger log = Logger.getLogger(Warrior.class.getName());
 
@@ -22,12 +25,17 @@ public class Warrior {
         return health;
     }
 
-    public void warriorAttack() {
+    @Override
+    public void attack() {
         log.info(name + " attacks with sword!");
     }
 
-    public void warriorHeal() {
+    @Override
+    public void heal() {
         log.info(name + " heals with a potion!");
     }
 
 }
+
+
+
