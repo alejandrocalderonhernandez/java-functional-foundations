@@ -1,19 +1,25 @@
 package com.debuggeandoideas;
 
-import com.debuggeandoideas.engine.problem.Archer;
-import com.debuggeandoideas.engine.problem.BattleEngine;
-import com.debuggeandoideas.engine.problem.Mage;
-import com.debuggeandoideas.engine.problem.Warrior;
+import com.debuggeandoideas.inventory.domain.Customer;
+import com.debuggeandoideas.inventory.domain.Product;
+import com.debuggeandoideas.inventory.repository.CustomerRepository;
 
 public class Main {
+
     public static void main(String[] args) {
 
-        BattleEngine engine = new BattleEngine();
+        CustomerRepository customerRepo = new CustomerRepository();
 
-        var archer = new Archer("Sand", 10);
-        var mage = new Mage("Merl", 8);
-        var warrior = new Warrior("Rex", 12);
+        // saving customers
+        customerRepo.save(1L, new Customer(1L, "John",  "john@example.com"));
+        customerRepo.save(2L, new Customer(2L, "Jane", "jane@example.com"));
 
+        // BUG: nobody stops this — compiles clean, blows up at runtime
+        customerRepo.save(3L, new Product(3L, "Laptop", 999.99));
+
+        // ClassCastException
+        Customer c = customerRepo.findById(3L);
+        System.out.println(c.getFullName());
 
     }
 }
