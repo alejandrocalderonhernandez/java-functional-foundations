@@ -15,7 +15,7 @@ public class Main {
         customerRepo.save(2L, new Customer(2L, "Jane", "jane@example.com"));
 
         // BUG: nobody stops this — compiles clean, blows up at runtime
-        customerRepo.save(3L, new Product(3L, "Laptop", 999.99));
+        customerRepo.save(3L, new Product(3L, 999.99, "Laptop"));
 
         // ClassCastException
         Customer c = customerRepo.findById(3L);
