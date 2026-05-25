@@ -4,19 +4,24 @@ import com.debuggeandoideas.inventory.domain.Customer;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
 
-public class CustomerRepository {
+public class CustomerRepository implements Repository<Customer, Long> {
 
     private final InMemoryRepository storage = new InMemoryRepository();
 
-    public void save(Long id, Object entity) {
+
+    @Override
+    public void save(Long id, Customer entity) {
         storage.save(id, entity);
     }
 
-    public Customer findById(Long id) {
-        return (Customer) storage.findById(id); // cast manual — aquí truena
+    @Override
+    public Optional<Customer> findById(Long id) {
+        return Optional.of((Customer) storage.findById(id));
     }
 
+    @Override
     public List<Customer> findAll() {
         List<Customer> result = new ArrayList<>();
         for (Object obj : storage.findAll()) {
@@ -25,6 +30,7 @@ public class CustomerRepository {
         return result;
     }
 
+    @Override
     public void delete(Long id) {
         storage.delete(id);
     }
