@@ -6,18 +6,33 @@ public class Product {
     private String name;
     private Double price;
 
-    public Product(Long id, String name, Double price) {
+    public Product(Long id, Double price, String name) {
+        this.id = id;
+        this.price = price;
+        this.name = name;
     }
 
     public Long getId() {
-        throw new UnsupportedOperationException();
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
     }
 
     public String getName() {
-        throw new UnsupportedOperationException();
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
     }
 
     public Double getPrice() {
-        throw new UnsupportedOperationException();
+        return price;
+    }
+
+    public void setPrice(Double price) {
+        this.price = price;
     }
 }

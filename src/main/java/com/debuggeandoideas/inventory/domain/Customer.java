@@ -6,18 +6,33 @@ public class Customer {
     private String fullName;
     private String email;
 
+    public void setId(Long id) {
+        this.id = id;
+    }
+
+    public void setFullName(String fullName) {
+        this.fullName = fullName;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
     public Customer(Long id, String fullName, String email) {
+        this.id = id;
+        this.fullName = fullName;
+        this.email = email;
     }
 
     public Long getId() {
-        throw new UnsupportedOperationException();
+        return this.id;
     }
 
     public String getFullName() {
-        throw new UnsupportedOperationException();
+        return this.fullName;
     }
 
     public String getEmail() {
-        throw new UnsupportedOperationException();
+        return this.email;
     }
 }
